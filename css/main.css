@@ -1,4 +1,8 @@
 /* GLOBAL STYLES */
+html {
+  box-shadow: 0 0 0 30px #000 inset;
+  padding: 0 30px;
+}
 body {
   font-family: helvetica, arial, sans;
 }
@@ -24,6 +28,9 @@ a {
 .header {
   background-color: #000;
   color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
 }
 .header-nav{
   float: right;
@@ -58,10 +65,11 @@ a {
   box-sizing: border-box;
   display: block;
   height: 10vh;
+  padding-top: 10px;
   position: relative;
+  left: -30px;
   width: 10vh;
   text-align: center;
-  padding: 10px;
 }
 .header-logo img{
   height: 80%;
