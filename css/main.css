@@ -309,6 +309,9 @@ within the .col-three div, all .col's that follow a .col */
 .gallery-thumbs img:hover {
   opacity: 1;
 }
+.gallery-thumbs .current{
+  cursor: default;
+}
 .gallery-thumbs .current img {
   box-shadow: 0 0 0 5px #ed6e2f;
   opacity: 1;
