@@ -129,7 +129,7 @@ p {
   top: 0.3em;
   width: 0;
 }
-.drop-menu{
+.drop-menu {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   display: none;
   list-style: none;
@@ -180,6 +180,11 @@ p {
   color: #333;
 }
 
+/* MOBILE MENU */
+.mobile-menu-check, .show-mobile-menu {
+  display: none;
+}
+
 /* FOOTER STYLES */
 .footer {
   background-color: #000;
@@ -204,13 +209,7 @@ p {
 .footer-nav a {
   color: #ccc;
 }
-/* .footer .dropdown:hover .drop-menu,
-.footer .drop-trigger:after {
-  display: none;
-}
-.footer .drop-trigger {
-  padding-right: 0;
-} */
+
 .footer .drop-trigger:after {
   border-color: transparent transparent #fff;
   top: 0;
@@ -605,6 +604,71 @@ within the .col-three div, all .col's that follow a .col */
   .header-logo {
     left: auto;
   }
+  /* MOBILE MENU */
+  .show-mobile-menu {
+    /* undo the display none */
+    display: inline-block;
+    float: right;
+    font-weight: bold;
+    padding: 1.5em;
+    position: relative;
+    margin-top: 1.5vh;
+    text-transform: uppercase;
+  }
+  .header-nav {
+    background-color: #444;
+    box-sizing: border-box;
+    left: 0;
+    position: absolute;
+    top: 11.5vh;
+    /* These next 2 will hide the desktop nav bar, until we give
+    another max height of say 2k px(when we know it's not mobile)
+    and the height of the nav bar won't really be 2k but rather enough
+    to show the content */
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    width: 100vw;
+    z-index: 9;
+  }
+  .header-nav li {
+    display: block;
+    margin-top: 1em;
+  }
+  .header-nav li:last-child {
+    padding-bottom: 1em;
+  }
+  .header-nav li:first-child a {
+    color: #fff;
+  }
+  .drop-trigger {
+    padding-right: 0;
+  }
+  /* move the blog link over a little bit */
+  .dropdown {
+    transform: translate(-3%, 0);
+  }
+  /* HIDE DROPDOWN IN NAV MENU */
+   .dropdown:hover .drop-menu, .drop-trigger:after {
+    display: none;
+  }
+  .mobile-menu-check:checked ~ .header-nav {
+    max-height: 2000px;
+  }
+
+  .mobile-menu-check:checked ~ .show-mobile-menu:after {
+    background-color: #000;
+    color: #ed6e2f;
+    content: "CLOSE";
+    left: 0;
+    position: absolute;
+    top: 1.5em;
+    width: 100%;
+    text-align: center;
+  }
+
 
   /* HOME STYLES */
   .home-callout {
@@ -655,11 +719,4 @@ within the .col-three div, all .col's that follow a .col */
     padding: 0;
   }
 
-}
-  /* BLOG STYLES */
-
-@media (max-width: 600px) {
-  .half-hero {
-    display: none;
-  }
 }
