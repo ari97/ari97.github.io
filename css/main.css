@@ -637,6 +637,12 @@ within the .col-three div, all .col's that follow a .col */
     display: block;
     margin-top: 1em;
   }
+  /* Undo the style changes from desktop version. 
+     Can't do this in the declaration style above due to specificity */
+  .header-nav li ~ li {
+    padding-left: 0;
+    border-left: hidden;
+  }
   .header-nav li:last-child {
     padding-bottom: 1em;
   }
@@ -646,10 +652,6 @@ within the .col-three div, all .col's that follow a .col */
   .drop-trigger {
     padding-right: 0;
   }
-  /* move the blog link over a little bit */
-  .dropdown {
-    transform: translate(-3%, 0);
-  }
   /* HIDE DROPDOWN IN NAV MENU */
    .dropdown:hover .drop-menu, .drop-trigger:after {
     display: none;
@@ -658,6 +660,8 @@ within the .col-three div, all .col's that follow a .col */
     max-height: 2000px;
   }
 
+
+  /* Clever CSS to 'replace' the text from MENU to CLOSE */
   .mobile-menu-check:checked ~ .show-mobile-menu:after {
     background-color: #000;
     color: #ed6e2f;
