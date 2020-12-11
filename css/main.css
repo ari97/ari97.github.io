@@ -6,7 +6,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: helvetica, arial, sans;
+  font-family: 'Open Sans', sans-serif, arial, sans;
   min-height: 100vh;
 }
 .content-container {
@@ -14,6 +14,10 @@ body {
   padding-top: 10vh;
   flex: 1 1 auto;
   width: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: font-family: 'Raleway', sans-serif;
+  font-weight: 100;
 }
 h1 {
   font-size: 7vw;
@@ -308,14 +312,14 @@ within the .col-three div, all .col's that follow a .col */
   color: #fff;
   display: inline-block;
   font-family: helvetica, arial, sans;
-  font-size: 1em;
+  font-size: 1.7em;
   font-weight: bold;
   line-height: 1;
-  padding-top: 0.85em;
+  padding-top: 0.25em;
   text-align: center;
   text-decoration: none;
-  height: 2.5em;
-  width: 2.5em;
+  height: 1.5em;
+  width: 1.5em;
   vertical-align: middle;
 }
 .social-list {
@@ -637,7 +641,7 @@ within the .col-three div, all .col's that follow a .col */
     display: block;
     margin-top: 1em;
   }
-  /* Undo the style changes from desktop version. 
+  /* Undo the style changes from desktop version.
      Can't do this in the declaration style above due to specificity */
   .header-nav li ~ li {
     padding-left: 0;
@@ -657,7 +661,7 @@ within the .col-three div, all .col's that follow a .col */
     display: none;
   }
   .mobile-menu-check:checked ~ .header-nav {
-    max-height: 2000px;
+    max-height: 90vh;
   }
 
 
